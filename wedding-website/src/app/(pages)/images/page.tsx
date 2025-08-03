@@ -4,6 +4,7 @@ import client from "@/lib/client"
 import { urlFor } from "@/lib/imagebuilder";
 import { type SanityDocument } from "next-sanity";
 
+export const dynamic = "force-dynamic"; 
 
 const query = `*[_type == "imageAsset"]{
   _id,

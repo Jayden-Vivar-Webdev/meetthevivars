@@ -49,7 +49,7 @@ export const useVideoUpload = () => {
         setError(result.error || 'Video upload failed')
         return result
       }
-
+      //Ad
       return result
     } catch (err) {
       const errorMessage = err instanceof Error ? err.message : 'Video upload failed'

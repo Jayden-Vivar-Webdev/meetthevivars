@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { Heart, Menu, X, Camera, FileText, Home } from "lucide-react";
+import { Heart, Menu, X, Camera, FileText, Home, Video } from "lucide-react";
 
 
 export default function WeddingHeader() {
@@ -47,12 +47,20 @@ export default function WeddingHeader() {
             </Link>
 
             <Link 
-              href="/#albums" 
+              href="/images" 
               className="text-amber-100 hover:text-amber-300 font-light text-sm tracking-wide transition-colors duration-300 border-b-2 border-transparent hover:border-amber-300 flex items-center space-x-2"
               onClick={handleLinkClick}
             >
               <Camera className="w-4 h-4" />
-              <span>ALBUMS</span>
+              <span>IMAGES</span>
+            </Link>
+            <Link 
+              href="/videos" 
+              className="text-amber-100 hover:text-amber-300 font-light text-sm tracking-wide transition-colors duration-300 border-b-2 border-transparent hover:border-amber-300 flex items-center space-x-2"
+              onClick={handleLinkClick}
+            >
+              <Video className="w-4 h-4" />
+              <span>VIDEOS</span>
             </Link>
             
             <Link 
@@ -103,12 +111,20 @@ export default function WeddingHeader() {
             </Link>
 
             <Link 
-              href="/#albums" 
+              href="/images" 
               className="text-amber-100 hover:text-amber-300 font-light py-2 transition-colors duration-300 tracking-wide flex items-center space-x-3"
               onClick={handleLinkClick}
             >
               <Camera className="w-4 h-4" />
-              <span>ALBUMS</span>
+              <span>IMAGES</span>
+            </Link>
+            <Link 
+              href="/videos" 
+              className="text-amber-100 hover:text-amber-300 font-light py-2 transition-colors duration-300 tracking-wide flex items-center space-x-3"
+              onClick={handleLinkClick}
+            >
+              <Camera className="w-4 h-4" />
+              <span>VIDEOS</span>
             </Link>
             
             <Link 

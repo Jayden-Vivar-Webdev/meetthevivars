@@ -6,13 +6,13 @@ export const dynamic = "force-dynamic";
 const query = `*[_type == "postAsset"]{
     _id,
     author,
-    description,       // not caption
+    description,       
     images[]{
       asset->{
         url
       }
     },
-    timeStamp,         // capital S here, case sensitive
+    timeStamp,         
     likes,
     comments[]{
       _key,

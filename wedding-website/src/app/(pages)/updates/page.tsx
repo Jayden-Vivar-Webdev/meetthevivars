@@ -1,7 +1,7 @@
 import WeddingUpdatesPage from "@/app/components/feed/feedposts";
 import client from "@/lib/client";
-import { urlFor } from "@/lib/imagebuilder";
-import { type SanityDocument } from "next-sanity";
+
+export const dynamic = "force-dynamic"; 
 
 const query = `*[_type == "postAsset"]{
     _id,
@@ -22,27 +22,51 @@ const query = `*[_type == "postAsset"]{
     }
   } | order(timeStamp desc)`;   // order by timeStamp
   
-
+  interface SanityImageAsset {
+    url: string;
+  }
+  
+  interface SanityImage {
+    asset: SanityImageAsset | null;
+  }
+  
+  interface SanityComment {
+    _key: string;
+    commentText: string;
+    author: string;
+    timestamp: string;
+  }
+  
+  interface SanityPost {
+    _id: string;
+    author: string;
+    description: string;
+    images: SanityImage[];
+    timeStamp: string;
+    likes: number;
+    comments: SanityComment[];
+  }
+  
 
 export default async function Updates(){
-    const data = await client.fetch<SanityDocument[]>(query, {});
-    console.log(data)
-    // Map Sanity data to your Post interface shape:
-    const posts = data.map((post: any) => ({
-      id: post._id,
-      caption: post.caption || '',
-      author: post.author || 'Anonymous',
-      images: [],  // you don't upload here, so keep empty
-      imageUrls: post.images?.map((img: any) => img.asset?.url) || [],
-      timestamp: post.timestamp || '',
-      likes: post.likes || 0,
-      comments: post.comments?.map((c: any) => ({
+    const data = await client.fetch<SanityPost[]>(query, {});
+
+    const posts = data.map((post) => ({
+    id: post._id,
+    caption: post.description || '',
+    author: post.author || 'Anonymous',
+    images: [],  // for uploads only, so empty here
+    imageUrls: post.images?.map(img => img.asset?.url ?? '') || [],
+    timestamp: post.timeStamp || '',
+    likes: post.likes || 0,
+    comments: post.comments?.map(c => ({
         id: c._key,
         text: c.commentText,
         author: c.author,
         timestamp: c.timestamp
-      })) || []
+    })) || []
     }));
+
     return(
         
            <WeddingUpdatesPage initialPosts={posts} />

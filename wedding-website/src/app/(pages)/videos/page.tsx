@@ -2,6 +2,8 @@ import WeddingVideosSection from "@/app/components/videos/videos"; // Rename app
 import client from "@/lib/client";
 import { type SanityDocument } from "next-sanity";
 
+export const dynamic = "force-dynamic";
+
 const query = `*[_type == "videoAsset"]{
   _id,
   title,

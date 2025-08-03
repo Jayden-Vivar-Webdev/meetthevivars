@@ -19,7 +19,7 @@ export default function WeddingUploadForm() {
     
     resetError();
     
-    const result = await uploadImage(file, title, description, category);
+    const result = await uploadImage(file, title, category, description, );
     
     if (result.success) {
       // Reset form

@@ -7,9 +7,13 @@ export async function POST(request: NextRequest) {
     const file = formData.get('file') as File
     const title = formData.get('title') as string
     const category = formData.get('category') as string
-    console.log(category)
     const description = formData.get('description') as string
-
+    console.log({
+      title,
+      category,
+      description,
+    });
+    
     if (!file) {
       return NextResponse.json(
         { success: false, error: 'No file provided' },
@@ -62,7 +66,7 @@ export async function POST(request: NextRequest) {
       _type: 'imageAsset',
       title: title.trim(),
       description: description?.trim() || undefined,
-      category: category.trim(), 
+      category: category, 
       image: {
         _type: 'image',
         asset: {

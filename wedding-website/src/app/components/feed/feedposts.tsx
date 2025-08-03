@@ -4,6 +4,11 @@ import { Crown, Heart, MessageCircle, Send, X, Plus, Camera, Image as ImageIcon,
 import React from 'react';
 import { usePostUpload } from '@/app/hooks/usePostUpload';
 
+
+export const dynamic = "force-dynamic"; 
+
+
+
 interface Post {
   id: string;
   caption: string;
@@ -21,10 +26,13 @@ interface Comment {
   author: string;
   timestamp: string;
 }
+interface WeddingFeedProps {
+  initialPosts: Post[];
+}
 
-export default function WeddingFeed() {
+export default function WeddingFeed({ initialPosts }: WeddingFeedProps) {
   const {uploadPost, error, isUploading, resetError} = usePostUpload()
-  const [posts, setPosts] = useState<Post[]>([]);
+  const [posts, setPosts] = useState<Post[]>(initialPosts || []);
   const [isCreatingPost, setIsCreatingPost] = useState(false);
   const [newPost, setNewPost] = useState({
     caption: '',

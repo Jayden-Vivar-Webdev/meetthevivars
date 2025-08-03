@@ -41,7 +41,7 @@ export default async function GalleryPage() {
         category: img.category ?? 'Wedding Day',
       };
     });
-
+    console.log(items)
     return <WeddingImagesSection items={items} />
   } catch (error) {
     console.error("🔥 Error fetching or rendering Sanity data:", error);

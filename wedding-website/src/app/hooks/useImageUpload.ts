@@ -8,7 +8,7 @@ export const useImageUpload = () => {
   const uploadImage = async (
     file: File,
     title: string,
-    category:string,
+    category: string,
     description?: string,
   ): Promise<UploadResponse> => {
     setIsUploading(true)

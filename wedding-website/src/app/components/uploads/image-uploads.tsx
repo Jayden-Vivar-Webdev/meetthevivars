@@ -131,6 +131,7 @@ export default function WeddingUploadForm() {
                   type="file"
                   accept="image/*"
                   onChange={handleFileChange}
+                  required
                   className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
                 />
                 
@@ -187,7 +188,7 @@ export default function WeddingUploadForm() {
               Category
             </label>
             <select
-              value={title}
+              value={category}
               onChange={(e) => setCategory(e.target.value)}
               className="w-full bg-black/30 border border-amber-300/30 rounded-lg px-4 py-3 text-white placeholder-amber-100/50 focus:outline-none focus:border-amber-300 focus:ring-2 focus:ring-amber-300/20 transition-all duration-300 text-sm sm:text-base appearance-none"
               required
@@ -213,6 +214,7 @@ export default function WeddingUploadForm() {
                 onChange={(e) => setDescription(e.target.value)}
                 placeholder="Share the story behind this special moment..."
                 rows={4}
+                required
                 className="w-full bg-black/30 border border-amber-300/30 rounded-lg px-4 py-3 text-white placeholder-amber-100/50 focus:outline-none focus:border-amber-300 focus:ring-2 focus:ring-amber-300/20 transition-all duration-300 resize-none text-sm sm:text-base"
               />
             </div>

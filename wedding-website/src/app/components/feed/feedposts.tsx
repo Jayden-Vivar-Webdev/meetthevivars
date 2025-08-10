@@ -356,20 +356,7 @@ export default function WeddingFeed({ initialPosts }: WeddingFeedProps) {
                 {/* Post Actions */}
                 <div className="p-4">
                   <div className="flex items-center space-x-4 mb-3">
-                    <button
-                      onClick={() => likePost(post.id)}
-                      className="flex items-center space-x-2 text-gray-600 hover:text-red-500 transition-colors"
-                    >
-                      <Heart className={`w-6 h-6 ${post.likes > 0 ? 'fill-red-500 text-red-500' : ''}`} />
-                      <span className="text-sm font-medium">{post.likes}</span>
-                    </button>
-                    <button
-                      onClick={() => setSelectedPost(selectedPost?.id === post.id ? null : post)}
-                      className="flex items-center space-x-2 text-gray-600 hover:text-amber-600 transition-colors"
-                    >
-                      <MessageCircle className="w-6 h-6" />
-                      <span className="text-sm font-medium">{post.comments.length}</span>
-                    </button>
+                    
                   </div>
 
                   {/* Post Caption */}

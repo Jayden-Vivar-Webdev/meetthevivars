@@ -63,21 +63,21 @@ export default function WeddingHeader() {
               <span>VIDEOS</span>
             </Link>
             
-            <Link 
+            {/* <Link 
               href="/updates" 
               className="text-amber-100 hover:text-amber-300 font-light text-sm tracking-wide transition-colors duration-300 border-b-2 border-transparent hover:border-amber-300 flex items-center space-x-2"
               onClick={handleLinkClick}
             >
               <FileText className="w-4 h-4" />
               <span>UPDATES</span>
-            </Link>
+            </Link> */}
             
             <Link 
               href="/Upload" 
               className="px-6 py-2 bg-gradient-to-r from-amber-600 to-amber-500 text-white font-medium text-sm rounded-md hover:from-amber-500 hover:to-amber-400 transition-all duration-300 shadow-lg hover:shadow-xl border border-amber-400/30 tracking-wide"
               onClick={handleLinkClick}
             >
-              Upload
+              UPDATES
             </Link>
           </nav>
 
@@ -127,21 +127,21 @@ export default function WeddingHeader() {
               <span>VIDEOS</span>
             </Link>
             
-            <Link 
+            {/* <Link 
               href="/updates" 
               className="text-amber-100 hover:text-amber-300 font-light py-2 transition-colors duration-300 tracking-wide flex items-center space-x-3"
               onClick={handleLinkClick}
             >
               <FileText className="w-4 h-4" />
               <span>UPDATES</span>
-            </Link>
+            </Link> */}
             
             <Link 
-              href="/upload" 
+              href="/updates" 
               className="px-6 py-3 bg-gradient-to-r from-amber-600 to-amber-500 text-white font-medium rounded-md hover:from-amber-500 hover:to-amber-400 transition-all duration-300 text-center shadow-lg border border-amber-400/30 tracking-wide mt-4"
               onClick={handleLinkClick}
             >
-              Upload
+              UPDATES
             </Link>
           </div>
         </nav>

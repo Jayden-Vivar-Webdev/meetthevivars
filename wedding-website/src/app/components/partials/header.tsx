@@ -73,7 +73,7 @@ export default function WeddingHeader() {
             </Link> */}
             
             <Link 
-              href="/Upload" 
+              href="/updates" 
               className="px-6 py-2 bg-gradient-to-r from-amber-600 to-amber-500 text-white font-medium text-sm rounded-md hover:from-amber-500 hover:to-amber-400 transition-all duration-300 shadow-lg hover:shadow-xl border border-amber-400/30 tracking-wide"
               onClick={handleLinkClick}
             >
